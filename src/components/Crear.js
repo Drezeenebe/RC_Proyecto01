@@ -22,9 +22,29 @@ export const Crear = () => {
             descript
         }
 
+        //Guardar estado
         setMovie(newMovie)
-        console.log(movie);
 
+        //Guardar en almacenamiento local
+        setInStorage(newMovie)
+
+    }
+
+    const setInStorage = movie =>{
+        // Conseguir los elementos actuales del localStorage
+        let elements = JSON.parse(localStorage.getItem("movies"))
+        
+        // Comprobar si es un array
+        if(Array.isArray(elements))
+            //Añadir elemento nuevo
+            elements.push(movie)
+        else
+            elements = [movie]    
+        //Guardar en el localstorage
+        localStorage.setItem('movies', JSON.stringify(elements))
+
+        //Devolver object guardado
+        return movie
     }
 
     return (
