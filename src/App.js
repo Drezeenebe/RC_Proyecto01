@@ -32,7 +32,9 @@ function App() {
 
 
         {/* Listado de peliculas */}
-        <Listado></Listado>
+        <section className="content">
+          <Listado></Listado>
+        </section>
 
         <aside className="lateral">
 
