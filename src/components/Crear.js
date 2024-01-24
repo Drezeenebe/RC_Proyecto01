@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { setInStorage } from '../helpers/saveInStorage'
+import { saveInStorage } from '../helpers/saveInStorage'
 
 export const Crear = ({setListMovies}) => {
 
@@ -32,7 +32,7 @@ export const Crear = ({setListMovies}) => {
         })
 
         //Guardar en almacenamiento local
-        setInStorage('movies',newMovie)
+        saveInStorage('movies',newMovie)
 
     }
 

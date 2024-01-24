@@ -1,4 +1,4 @@
-export const setInStorage = (key,item) =>{
+export const saveInStorage = (key,item) =>{
     // Conseguir los elementos actuales del localStorage
     let elements = JSON.parse(localStorage.getItem(key))
     
