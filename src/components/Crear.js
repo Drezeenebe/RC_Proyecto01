@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { setInStorage } from '../helpers/saveInStorage'
 
 export const Crear = () => {
 
@@ -26,25 +27,8 @@ export const Crear = () => {
         setMovie(newMovie)
 
         //Guardar en almacenamiento local
-        setInStorage(newMovie)
+        setInStorage('movies',newMovie)
 
-    }
-
-    const setInStorage = movie =>{
-        // Conseguir los elementos actuales del localStorage
-        let elements = JSON.parse(localStorage.getItem("movies"))
-        
-        // Comprobar si es un array
-        if(Array.isArray(elements))
-            //Añadir elemento nuevo
-            elements.push(movie)
-        else
-            elements = [movie]    
-        //Guardar en el localstorage
-        localStorage.setItem('movies', JSON.stringify(elements))
-
-        //Devolver object guardado
-        return movie
     }
 
     return (
