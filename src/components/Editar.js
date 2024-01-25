@@ -1,7 +1,7 @@
 import React from 'react'
 import { saveInStorage } from '../helpers/saveInStorage'
 
-export const Editar = ({ movie,getMovies }) => {
+export const Editar = ({ movie,getMovies,setEditar,setListMovies }) => {
 
     const title_component = 'Editar Pelicula'
 
@@ -24,7 +24,10 @@ export const Editar = ({ movie,getMovies }) => {
         listMovies[indexMovie] = movieUpdate
 
         //Guardar en localStorage
+        localStorage.setItem('movies',JSON.stringify(listMovies))
         //Actualizar states
+        setListMovies(listMovies)
+        setEditar(0)
     }
 
     return (
@@ -40,7 +43,7 @@ export const Editar = ({ movie,getMovies }) => {
                     defaultValue={movie.descript}
                     className='descript_edit'
                 />
-                <input type="text" className='edit' value="Actualizar" />
+                <input type="submit" className='edit' value="Actualizar" />
             </form>
         </div>
     )

@@ -42,7 +42,11 @@ export const Listado = ({listMovies,setListMovies}) => {
                 
                     {/* Aparece formulario editar */}
                     {editar == movie.id && (
-                        <Editar movie={movie} getMovies={getMovies}></Editar>
+                        <Editar 
+                            movie={movie} 
+                            getMovies={getMovies} 
+                            setEditar={setEditar} 
+                            setListMovies={setListMovies}/>
                     )}
                 </article>)
             })

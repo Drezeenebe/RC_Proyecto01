@@ -202,6 +202,23 @@ input[type="button"]{
   .peli-item{
       width: 80%;
   }
+}
 
+.edit_form{
+  border-top: 1px solid #ddd;
+  margin-top: 15px;
+  padding: 10px;
+  display: block;
+}
 
+.title_edit,.descript_edit{
+  display: block;
+  border: none;
+  border-radius: 5px;
+  background-color: #f8e8e8c7;
+  font-size: 15px;
+  padding: 15px;
+  margin: 10px 0px;
+  width: 85%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
