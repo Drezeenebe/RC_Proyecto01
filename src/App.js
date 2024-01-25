@@ -42,7 +42,7 @@ function App() {
 
             <aside className="lateral">
 
-                <Buscador></Buscador>
+                <Buscador listMovies={listMovies} setListMovies={setListMovies}></Buscador>
 
                 <Crear setListMovies={setListMovies}></Crear>
             </aside>

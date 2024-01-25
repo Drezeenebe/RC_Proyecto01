@@ -1,5 +1,4 @@
 import React from 'react'
-import { saveInStorage } from '../helpers/saveInStorage'
 
 export const Editar = ({ movie,getMovies,setEditar,setListMovies }) => {
 
