@@ -36,13 +36,13 @@ export const Listado = ({listMovies,setListMovies}) => {
             listMovies.map(movie => {
                 return (<article key={movie.id} className="peli-item">
                     <h3 className="title">{movie.title}</h3>
-                    <p className="description">{movie.descrip}</p>
+                    <p className="description">{movie.descript}</p>
                     <button className="edit" onClick={()=>{setEditar(movie.id)}}>Editar</button>
                     <button className="delete" onClick={()=> deleteMovie(movie.id)}>Borrar</button>
                 
                     {/* Aparece formulario editar */}
                     {editar == movie.id && (
-                        <Editar movie={movie}></Editar>
+                        <Editar movie={movie} getMovies={getMovies}></Editar>
                     )}
                 </article>)
             })
