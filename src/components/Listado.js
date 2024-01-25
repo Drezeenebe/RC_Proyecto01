@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { saveInStorage } from '../helpers/saveInStorage';
+import { Editar } from './Editar';
 
 export const Listado = ({listMovies,setListMovies}) => {
 
     // const [listMovies, setListMovies] = useState([])
+
+    const [editar,setEditar] = useState(0)
 
     useEffect(() => {
         getMovies();
@@ -34,8 +37,13 @@ export const Listado = ({listMovies,setListMovies}) => {
                 return (<article key={movie.id} className="peli-item">
                     <h3 className="title">{movie.title}</h3>
                     <p className="description">{movie.descrip}</p>
-                    <button className="edit">Editar</button>
+                    <button className="edit" onClick={()=>{setEditar(movie.id)}}>Editar</button>
                     <button className="delete" onClick={()=> deleteMovie(movie.id)}>Borrar</button>
+                
+                    {/* Aparece formulario editar */}
+                    {editar == movie.id && (
+                        <Editar></Editar>
+                    )}
                 </article>)
             })
             :
